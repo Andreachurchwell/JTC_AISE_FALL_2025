@@ -20,9 +20,9 @@ Notes, practice exercises, and projects from **Columbia University's Justice Thr
 ---
 
 ## 📖 Table of Contents
-- [Week One](#week-one)
-- [Week Two](#week-two)
-- (…etc, will expand as the program goes)
+- [Practice Folder](practice) – 💡 contains this week’s homework & exercises
+  - [Pandas Homework](practice/pandas_practice.py) – NBA Team Stats analysis
+  - [Assets](practice/assets) – generated charts & outputs
 
 ---
 
@@ -53,6 +53,25 @@ It will include Python practice, advanced data science, machine learning, and pr
 
 ## 📌 Notes
 Sensitive files (API keys, datasets, .env) are excluded via `.gitignore`.  
+
+---
+
+
+## 📊 Current Homework – Pandas NBA Team Stats
+
+This week’s assignment was **Pandas practice**.  
+I used NBA team per-game stats (2024–25 season) to practice:
+
+- Cleaning the dataset (removed playoff stars, dropped “League Average” row)  
+- Renaming columns for clarity (`points`, `rebounds`, etc.)  
+- Checking for missing values & outliers  
+- Printing Top 5 & Bottom 5 scoring teams  
+- Visualizing results with Matplotlib + team colors  
+
+### 📈 Visualization
+<div align="center">
+  <img src="practice/assets/team_points_per_game.png" alt="NBA Team Points Per Game Chart" width="700">
+</div>
 
 ---
 
