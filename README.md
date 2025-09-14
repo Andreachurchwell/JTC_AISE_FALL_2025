@@ -67,6 +67,8 @@ I used NBA team per-game stats (2024–25 season) to practice:
 - Checking for missing values & outliers  
 - Printing Top 5 & Bottom 5 scoring teams  
 - Visualizing results with Matplotlib + team colors  
+- Sept 2025: Added 3-Point Reliance analysis to `pandas_practice.py`
+- Sept 2025: Cleaned practice folder and organized assets
 
 ### 📈 Visualization
 <div align="center">
@@ -74,6 +76,11 @@ I used NBA team per-game stats (2024–25 season) to practice:
 </div>
 
 ---
+
+### 🏀 3-Point Reliance
+<div align="center">
+  <img src="practice/assets/3pt_reliance_w_league_avg_in_red.png" width="700">
+</div>
 
 ## 🌐 Links
 - [Justice Through Code Program](https://justicethroughcode.org/)  
