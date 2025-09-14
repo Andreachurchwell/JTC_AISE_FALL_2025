@@ -174,3 +174,138 @@ for b in bars:
     plt.text(b.get_x() + b.get_width()/2, h, f"{h:.1f}", ha="center", va="bottom", fontsize=8)
 
 plt.show()  
+
+
+
+conference_map = {
+    "ATL": "East", "BOS": "East", "BRK": "East", "CHA": "East", "CHI": "East", 
+    "CLE": "East", "DET": "East", "IND": "East", "MIA": "East", "MIL": "East",
+    "NYK": "East", "ORL": "East", "PHI": "East", "TOR": "East", "WAS": "East",
+    
+    "DAL": "West", "DEN": "West", "GSW": "West", "HOU": "West", "LAC": "West",
+    "LAL": "West", "MEM": "West", "MIN": "West", "NOP": "West", "OKC": "West",
+    "PHX": "West", "POR": "West", "SAC": "West", "SAS": "West", "UTA": "West",
+}
+
+df["conference"] = df["team"].map(conference_map)
+print(df[["team", "conference", "points"]].head())
+
+# check to see if all 30 teams are there now
+print(df["conference"].value_counts())
+
+
+stats = ['points', 'rebounds', 'assists', 'steals', 'blocks', 'TOV']
+
+# Use the list of column names, not the string 'stats'
+conf_summary = df.groupby('conference')[stats].mean().round(1)
+
+print("\nCONFERENCE SUMMARY (averages):")
+print(conf_summary)
+
+ax = conf_summary.T.plot(
+    kind="bar",
+    figsize=(8,5),
+    title="East vs West: Per-Game Averages",
+    ylabel="Per Game",
+    rot=0
+)
+ax.legend(title="Conference")
+plt.tight_layout()
+plt.show()
+
+
+print('\nLeague Average Shot Attemps:')
+print(df[['2PA', '3PA']].mean().round(1))
+
+conf_shots = df.groupby('conference')[['2PA','3PA']].mean().round(1)
+print("\nConference Average Shot Attempts:")
+print(conf_shots)
+
+ax = conf_shots.plot(kind='bar', figsize=(7,5), rot=0)
+plt.title("East vs West: Average 2PA vs 3PA")
+plt.ylabel("Attempts per Game")
+plt.tight_layout()
+plt.show()
+
+
+
+# --- 3 Point Reliance Analysis ---
+# the celtics and golden state live and die by the 3, denver was the lowest out of 30 teams
+# Calculate 3-point attempt rate
+df["3P_rate"] = df["3PA"] / df["FGA"]
+
+# Sort by 3-point rate
+df_sorted_3p = df.sort_values("3P_rate", ascending=False)
+
+print("\nTop 5 Teams by 3-Point Reliance:")
+print(df_sorted_3p[["team", "3PA", "FGA", "3P_rate"]].head())
+
+print("\nBottom 5 Teams by 3-Point Reliance:")
+print(df_sorted_3p[["team", "3PA", "FGA", "3P_rate"]].tail())
+
+# Plot
+colors = [team_colors[t] for t in df_sorted_3p["team"]]
+plt.figure(figsize=(12,6))
+bars = plt.bar(df_sorted_3p["team"], df_sorted_3p["3P_rate"], color=colors)
+plt.title("NBA Team 3-Point Reliance (3PA / FGA)")
+plt.ylabel("Share of Shots that are 3s")
+plt.xlabel("Team")
+plt.xticks(rotation=45, ha="right")
+plt.grid(axis="y", linestyle="--", alpha=0.7)
+
+# Add % labels
+for b in bars:
+    h = b.get_height()
+    plt.text(b.get_x() + b.get_width()/2, h, f"{h:.1%}", ha="center", va="bottom", fontsize=8)
+
+plt.tight_layout()
+plt.show()
+
+
+
+# League-average 3P rate for context
+league_3p_rate = (df["3PA"].sum() / df["FGA"].sum())
+
+# Ranked table with key payoff stats
+cols = ["team","points","FGA","3PA","3P%","2P%","FTA","FT%","assists"]
+rank_3p = df.assign(three_pt_rate = df["3PA"]/df["FGA"]) \
+            .sort_values("three_pt_rate", ascending=False)[cols + ["three_pt_rate"]]
+
+print("\nTop 8 by 3P reliance:")
+print(rank_3p.head(8).to_string(index=False))
+
+print("\nBottom 8 by 3P reliance:")
+print(rank_3p.tail(8).to_string(index=False))
+
+print(f"\nLeague average 3P rate: {league_3p_rate:.1%}")
+
+
+# =============================
+# EXTRA ANALYSIS (add here)
+# =============================
+
+# League average 3P rate
+league_3p_rate = df["3PA"].sum() / df["FGA"].sum()
+
+# Ranked table
+rank_3p = df.assign(three_pt_rate = df["3PA"]/df["FGA"]) \
+            .sort_values("three_pt_rate", ascending=False)
+
+print("\nLeague average 3P rate:", f"{league_3p_rate:.1%}")
+print("\nTop 8 by 3P reliance:")
+print(rank_3p[["team","points","FGA","3PA","3P%","2P%","FTA","FT%","assists","three_pt_rate"]].head(8))
+print("\nBottom 8 by 3P reliance:")
+print(rank_3p[["team","points","FGA","3PA","3P%","2P%","FTA","FT%","assists","three_pt_rate"]].tail(8))
+
+# Add dashed league average line to chart
+plt.figure(figsize=(12,6))
+bars = plt.bar(df_sorted_3p["team"], df_sorted_3p["3P_rate"], color=colors, edgecolor="black")
+plt.axhline(league_3p_rate, linestyle="--", color="red", alpha=0.7)
+plt.text(-0.5, league_3p_rate+0.005, f"League Avg {league_3p_rate:.1%}", fontsize=9, color="red")
+
+plt.title("NBA Team 3-Point Reliance vs League Average", fontsize=14, fontweight="bold")
+plt.ylabel("Share of Shots that are 3s")
+plt.xticks(rotation=45, ha="right")
+plt.grid(axis="y", linestyle="--", alpha=0.6)
+plt.tight_layout()
+plt.show()
