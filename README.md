@@ -130,6 +130,6 @@ Each chart also has an **Insight block** explaining the results.
 
 <div align="center">
   <a href="https://centerforjustice.columbia.edu/justicethroughcode">
-    <img src="assets/jtc.png" alt="Justice Through Code Logo" width="120">
+    <img src="assets/jtc.png" alt="Justice Through Code Logo" width="80" style="border-radius:50%;">
   </a>
 </div>
