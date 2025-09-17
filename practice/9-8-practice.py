@@ -27,11 +27,11 @@ print(longest_word("AI rocks and JTC rules"))
 
 
 
-# 🚀 Exercise 1: Build Your Own Max Function
+# Exercise 1: Build Your Own Max Function
 
 # Write a function my_max(nums) that takes a list of numbers and returns the largest number (without using Python’s max()).
 
-# 👉 Example:
+
 def my_max(nums):
     largest = nums[0]
     for num in nums:
@@ -42,7 +42,7 @@ def my_max(nums):
 print(my_max([2, 7, 3, 10, 5]))  # 10
 
 
-# 🚀 Exercise 2: Longest Word (Loop Only)
+# Exercise 2: Longest Word (Loop Only)
 
 # Rewrite your longest word finder without using max() or list comprehensions.
 # That means:
@@ -65,7 +65,7 @@ print(longest_word_finder("Justice Through Code"))     # ['Justice', 'Through']
 print(longest_word_finder("AI rocks and JTC rules"))   # ['rocks', 'rules']
 
 
-# 🚀 New Challenge: Word Frequencies
+# New Challenge: Word Frequencies
 
 # Take a sentence and return a dictionary with each word and how many times it appears.
 def word_freq(sentence):

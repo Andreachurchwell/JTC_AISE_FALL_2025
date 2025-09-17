@@ -1,0 +1,183 @@
+
+Getting Started with Pandas - Study Notes
+=========================================
+
+1. Introduction
+---------------
+- Pandas = Python library for data manipulation & analysis.
+- Built on top of NumPy.
+- Provides two main data structures:
+  - Series: 1D labeled array.
+  - DataFrame: 2D table with labeled rows & columns.
+
+2. Installation & Import
+-------------------------
+- Install: pip install pandas
+- Import: import pandas as pd
+
+3. Creating Objects
+-------------------
+- From lists/dicts/arrays:
+    pd.Series([10, 20, 30])
+    pd.DataFrame({"col1": [1,2], "col2": [3,4]})
+- From CSV/Excel/JSON/SQL:
+    pd.read_csv("file.csv")
+    pd.read_excel("file.xlsx")
+
+4. Inspecting Data
+------------------
+- df.head(), df.tail() → preview data.
+- df.shape → rows, columns.
+- df.columns → column names.
+- df.info() → data types, null counts.
+- df.describe() → summary stats.
+
+5. Selecting & Indexing
+-----------------------
+- Column selection: df["col"], df.col
+- Row selection: df.loc[0], df.iloc[0]
+- Slicing: df.loc[2:5], df.iloc[2:5]
+- Boolean filter: df[df["age"] > 30]
+
+6. Basic Operations
+-------------------
+- Adding column: df["new"] = df["a"] + df["b"]
+- Drop column: df.drop("col", axis=1)
+- Rename columns: df.rename(columns={"old":"new"})
+- Sorting: df.sort_values("col")
+
+7. Handling Missing Data
+-------------------------
+- df.isnull(), df.notnull()
+- df.dropna() → remove missing rows.
+- df.fillna(value) → fill with given value.
+
+8. Grouping & Aggregation
+--------------------------
+- df.groupby("col").mean()
+- df.groupby("col")["value"].sum()
+- df.agg({"col1":"mean", "col2":"sum"})
+
+9. Combining DataFrames
+------------------------
+- Concatenate: pd.concat([df1, df2])
+- Merge/Join: pd.merge(df1, df2, on="id")
+
+10. Reshaping
+-------------
+- Pivot: df.pivot(index="date", columns="city", values="temp")
+- Melt: pd.melt(df, id_vars=["id"], value_vars=["col1","col2"])
+
+11. Time Series
+---------------
+- Convert dates: pd.to_datetime(df["date"])
+- Set index: df.set_index("date")
+- Resample: df.resample("M").mean()
+
+12. String Operations
+---------------------
+- df["col"].str.lower()
+- df["col"].str.contains("word")
+
+13. Visualization
+-----------------
+- df["col"].plot(kind="hist")
+- df.plot(x="date", y="value")
+
+14. Exporting Data
+------------------
+- df.to_csv("out.csv")
+- df.to_excel("out.xlsx")
+
+-----------------------------------
+
+
+
+Getting Started with Pandas — Tutorial-Aligned Notes
+
+What kind of data does pandas handle?
+
+Series → 1D labeled array (like a single column).
+
+DataFrame → 2D table with labeled rows/columns.
+
+Handles numbers, strings, dates, booleans, categoricals.
+
+How do I read and write tabular data?
+
+Read:
+
+df = pd.read_csv("file.csv")
+df = pd.read_excel("file.xlsx")
+
+
+Write:
+
+df.to_csv("out.csv", index=False)
+df.to_excel("out.xlsx", index=False)
+
+
+How do I select a subset of a DataFrame?
+
+Columns: df["col"], df[["col1","col2"]]
+
+Rows: df.loc[0] (label), df.iloc[0] (position)
+
+Slicing: df.loc[2:5]
+
+Filtering: df[df["age"] > 30]
+
+How do I create plots in pandas?
+
+Quick charts with matplotlib:
+
+df["col"].plot(kind="hist")
+df.plot(x="date", y="value", kind="line")
+
+
+How to create new columns derived from existing columns
+
+Simple math: df["new"] = df["a"] + df["b"]
+
+Apply function: df["log_a"] = df["a"].apply(np.log)
+
+How to calculate summary statistics
+
+df.mean(), df.median(), df.std()
+
+df.describe() → summary of all numeric columns
+
+Grouping: df.groupby("col")["value"].mean()
+
+How to reshape the layout of tables
+
+Pivot: df.pivot(index="date", columns="city", values="temp")
+
+Melt: pd.melt(df, id_vars="id", value_vars=["a","b"])
+
+Stack/unstack → switch between wide/long formats
+
+How to combine data from multiple tables
+
+Concatenate: pd.concat([df1, df2])
+
+Merge: pd.merge(df1, df2, on="id")
+
+Join: df1.join(df2.set_index("id"), on="id")
+
+How to handle time series data with ease
+
+Parse dates: pd.to_datetime(df["date"])
+
+Set index: df.set_index("date")
+
+Resample: df.resample("M").mean()
+
+How to manipulate textual data
+
+Lowercase: df["col"].str.lower()
+
+Contains: df["col"].str.contains("word")
+
+Replace: df["col"].str.replace("old","new")
+
