@@ -107,7 +107,15 @@ All work is inside a Jupyter Notebook:
 
 Each chart also has an **Insight block** explaining the results.  
 
-💡 At the end, I also created some **extra visuals just for fun** — like highlighting Jack & Rose in the dataset and building interactive Plotly charts — to practice making the analysis more engaging.
+💡 At the end, I also created some **extra visuals just for fun** — like highlighting Jack & Rose in the dataset and building interactive Plotly charts — to practice making the analysis more engaging. Here are my 3 favorites!
+**Fare vs Age (Jack & Rose)**  
+![Fare vs Age](assets/fareVsAgeJackAndRose.png)
+
+**Survival by Gender**  
+![Survival by Gender](assets/survivalByGender.png)
+
+**Pie Chart**  
+![Pie Chart](assets/pieChart.png)
 
 
 ---
