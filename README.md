@@ -109,13 +109,13 @@ Each chart also has an **Insight block** explaining the results.
 
 💡 At the end, I also created some **extra visuals just for fun** — like highlighting Jack & Rose in the dataset and building interactive Plotly charts — to practice making the analysis more engaging. Here are my 3 favorites!
 **Fare vs Age (Jack & Rose)**  
-![Fare vs Age](assets/fareVsAgeJackAndRose.png)
+![Fare vs Age](practice/assets/fareVsAgeJackAndRose.png)
 
 **Survival by Gender**  
-![Survival by Gender](assets/survivalByGender.png)
+![Survival by Gender](practice/assets/survivalByGender.png)
 
 **Pie Chart**  
-![Pie Chart](assets/pieChart.png)
+![Pie Chart](practice/assets/pieChart.png)
 
 
 ---
