@@ -123,11 +123,13 @@ Each chart also has an **Insight block** explaining the results.
 ---
 
 ## 🌐 Links
-- [Justice Through Code Program](https://https://centerforjustice.columbia.edu/justicethroughcode)  
+- [Justice Through Code Program](https://centerforjustice.columbia.edu/justicethroughcode)  
 - [Columbia University](https://www.columbia.edu/)  
 
 ---
 
 <div align="center">
-  <img src="assets/jtc.png" alt="Justice Through Code Logo" width="120">
+  <a href="https://centerforjustice.columbia.edu/justicethroughcode">
+    <img src="assets/jtc.png" alt="Justice Through Code Logo" width="120">
+  </a>
 </div>
