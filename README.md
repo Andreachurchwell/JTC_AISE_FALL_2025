@@ -82,6 +82,24 @@ I used NBA team per-game stats (2024–25 season) to practice:
   <img src="practice/assets/3pt_reliance_w_league_avg_in_red.png" width="700">
 </div>
 
+
+---
+
+## 🐼 Pandas Tutorials (Getting Started)
+
+I’m also working through the official **Pandas Getting Started tutorials** step by step  
+(using the Titanic dataset). This lives in a Jupyter Notebook:
+
+- [pandas_tutorial.ipynb](practice/pandas_tutorial.ipynb)
+
+### Progress so far
+- ✅ Module 1 – Intro / What kind of data Pandas handles
+- ✅ Module 2 – Reading & writing CSVs
+- ✅ Module 3 – Selecting subsets of data
+- ✅ Module 4 – Creating plots
+- ⏳ Module 5+ – Coming soon
+
+
 ## 🌐 Links
 - [Justice Through Code Program](https://justicethroughcode.org/)  
 - [Columbia University](https://www.columbia.edu/)  
