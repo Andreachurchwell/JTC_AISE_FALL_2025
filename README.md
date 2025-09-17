@@ -123,7 +123,7 @@ Each chart also has an **Insight block** explaining the results.
 ---
 
 ## 🌐 Links
-- [Justice Through Code Program](https://justicethroughcode.org/)  
+- [Justice Through Code Program](https://centerforjustice.columbia.edu/justicethroughcode)  
 - [Columbia University](https://www.columbia.edu/)  
 
 ---
