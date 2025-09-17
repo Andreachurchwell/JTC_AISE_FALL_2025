@@ -20,9 +20,11 @@ Notes, practice exercises, and projects from **Columbia University's Justice Thr
 ---
 
 ## 📖 Table of Contents
-- [Practice Folder](practice) – 💡 contains this week’s homework & exercises
-  - [Pandas Homework](practice/pandas_practice.py) – NBA Team Stats analysis
+- [Practice Folder](practice) – 💡 weekly homework & exercises
+  - [pandas_tutorial.ipynb](practice/pandas_tutorial.ipynb) – Pandas Getting Started (Titanic dataset)
+  - [pandas_practice.py](practice/pandas_practice.py) – NBA Team Stats analysis
   - [Assets](practice/assets) – generated charts & outputs
+
 
 ---
 
@@ -79,26 +81,36 @@ I used NBA team per-game stats (2024–25 season) to practice:
 
 ### 🏀 3-Point Reliance
 <div align="center">
-  <img src="practice/assets/3pt_reliance_w_league_avg_in_red.png" width="700">
+  <img src="practice/assets/3pt_reliance_w_l_avg_in_red.png" width="700">
 </div>
-
 
 ---
 
-## 🐼 Pandas Tutorials (Getting Started)
+## 🐼 Pandas Tutorials – Getting Started (Titanic Dataset)
 
-I’m also working through the official **Pandas Getting Started tutorials** step by step  
-(using the Titanic dataset). This lives in a Jupyter Notebook:
+I worked through the official **Pandas Getting Started tutorials** step by step using the Titanic dataset.  
+All work is inside a Jupyter Notebook:  
+📓 **[practice/pandas_tutorial.ipynb](practice/pandas_tutorial.ipynb)**  
 
-- [pandas_tutorial.ipynb](practice/pandas_tutorial.ipynb)
+### Progress
+- ✅ Module 1 – Intro / What kind of data Pandas handles  
+- ✅ Module 2 – Reading & writing CSVs  
+- ✅ Module 3 – Selecting subsets of data  
+- ✅ Module 4 – Creating plots  
+- ✅ Module 5–10 – Completed (grouping, reshaping, missing data, etc.)  
 
-### Progress so far
-- ✅ Module 1 – Intro / What kind of data Pandas handles
-- ✅ Module 2 – Reading & writing CSVs
-- ✅ Module 3 – Selecting subsets of data
-- ✅ Module 4 – Creating plots
-- ⏳ Module 5+ – Coming soon
+### Visualizations Included
+- Survival by class and gender (pink/blue bar chart)  
+- Age distribution by survival (histogram)  
+- Survival breakdown (sunburst with Class → Gender → Survival)  
+- Fare × Age bubble chart (with Jack & Rose highlighted ⭐)  
 
+Each chart also has an **Insight block** explaining the results.  
+
+💡 At the end, I also created some **extra visuals just for fun** — like highlighting Jack & Rose in the dataset and building interactive Plotly charts — to practice making the analysis more engaging.
+
+
+---
 
 ## 🌐 Links
 - [Justice Through Code Program](https://justicethroughcode.org/)  
