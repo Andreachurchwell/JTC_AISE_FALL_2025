@@ -7,9 +7,11 @@
 <img alt="Python" src="https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white">
 <img alt="Pandas" src="https://img.shields.io/badge/Pandas-Data-150458?logo=pandas&logoColor=white">
 <img alt="NumPy" src="https://img.shields.io/badge/NumPy-Data-013243?logo=numpy&logoColor=white">
-<img alt="Matplotlib" src="https://img.shields.io/badge/Matplotlib-Visualization-11557c?logo=plotly&logoColor=white">
+<img alt="Matplotlib" src="https://img.shields.io/badge/Matplotlib-Visualization-11557c?logo=matplotlib&logoColor=white">
 <img alt="scikit-learn" src="https://img.shields.io/badge/scikit--learn-ML-F7931E?logo=scikitlearn&logoColor=white">
 <img alt="SQLite" src="https://img.shields.io/badge/SQLite-DB-003B57?logo=sqlite&logoColor=white">
+<img alt="Jupyter" src="https://img.shields.io/badge/Jupyter-Notebook-F37626?logo=jupyter&logoColor=white">
+<img alt="VS Code" src="https://img.shields.io/badge/VS_Code-IDE-0078d7?logo=visualstudiocode&logoColor=white">
 
 </div>
 
@@ -31,6 +33,12 @@ Notes, practice exercises, and projects from **Columbia University's Justice Thr
 ## 📝 About
 This repo is a record of my journey through the AISE (Flagship) program, building on my experience in the Tech Pathways program.  
 It will include Python practice, advanced data science, machine learning, and project work.
+
+---
+
+## 📂 Weekly Folders
+This repo also includes folders for each week of the AISE program (Week 0 → Week 41).  
+Each folder contains notes, assignments, and practice for that week.
 
 ---
 
