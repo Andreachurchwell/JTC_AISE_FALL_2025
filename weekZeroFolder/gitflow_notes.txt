@@ -1,0 +1,105 @@
+📝 Git Key Takeaways
+Everyday Workflow (simple & safe)
+
+Always create a branch off main → git checkout -b andrea/feature-name
+
+Make small commits often → git add . && git commit -m "feat: short message"
+
+Push your branch → git push -u origin andrea/feature-name
+
+Open a Pull Request → get at least 1 review → merge into main
+
+Branch Protection (best practice)
+
+Protect main branch
+
+✅ Require reviews
+
+✅ Require tests/CI to pass
+
+⛔ No direct pushes
+
+Commit & PR Style
+
+Commit prefixes:
+
+feat: new feature
+
+fix: bug fix
+
+docs: documentation change
+
+chore: cleanup, config, etc.
+
+PR body should explain:
+
+What changed
+
+How to test
+
+Any risks
+
+Gitflow (if instructor asks)
+
+develop branch = integration branch
+
+feature/* branches come from develop
+
+release/* branches come from develop, merge into main + develop
+
+hotfix/* branches come from main, merge back into both
+
+Safety & Security
+
+Add .gitignore for: .venv/, __pycache__/, .env
+
+Never commit secrets (API keys, passwords)
+
+If you do leak a secret: rotate it immediately + remove from repo
+
+Common Fix Commands
+
+Update your branch with latest main:
+
+git checkout main
+git pull
+git checkout your-branch
+git merge main
+
+
+If merge conflicts happen: fix files → git add . → git commit
+
+
+
+Working with Tags & Releases
+
+Tagging a version (if asked):
+
+git checkout main
+git pull
+git tag v1.0.0 -m "First release"
+git push origin v1.0.0
+
+Undoing Mistakes (safe options)
+
+Undo last commit but keep changes staged:
+
+git reset --soft HEAD~1
+
+
+Undo last commit completely (discard changes):
+
+git reset --hard HEAD~1
+
+
+Revert a commit (makes a new commit that undoes it):
+
+git revert <commit-hash>
+
+Checking Status & History
+
+See what’s changed: git status
+
+See commit history: git log --oneline --graph --decorate --all
+
+Who changed what in a file: git blame filename.py

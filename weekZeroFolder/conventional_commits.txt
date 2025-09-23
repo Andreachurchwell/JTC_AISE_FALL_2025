@@ -1,0 +1,77 @@
+📝 What Conventional Commits Means
+Structure
+
+A commit message looks like:
+
+<type>[optional scope]: <short description>
+
+[optional body]
+
+[optional footer(s)]
+
+
+type → what kind of change it is
+
+scope (optional) → part of the codebase it touches
+
+description → short summary
+
+body (optional) → details, reasoning
+
+footer(s) (optional) → extra notes, e.g. breaking changes or references
+
+Types You’ll Use Most
+
+feat: → adds a new feature (like a new function, API endpoint, or GUI button)
+
+fix: → fixes a bug
+
+Other common ones:
+
+docs: documentation only
+
+style: code style (formatting, spacing, etc., no logic change)
+
+refactor: code change that isn’t a bug fix or new feature (cleanup, reorganizing)
+
+test: adding or updating tests
+
+chore: maintenance, config, dependencies
+
+Breaking Changes
+
+Add ! or a footer to mark a breaking change:
+
+feat!: remove old login API
+BREAKING CHANGE: login() function is no longer supported
+
+
+Tells tools/users: this will break existing code that depends on the old version.
+
+Why It’s Useful
+
+Automated changelogs → tools can auto-generate release notes from your commits.
+
+Versioning → ties to SemVer
+:
+
+fix: → patch release (1.0.1 → 1.0.2)
+
+feat: → minor release (1.0.0 → 1.1.0)
+
+BREAKING CHANGE: → major release (1.x → 2.0.0)
+
+Clear communication → teammates instantly know what changed.
+
+Consistency → no random commit messages like “stuff” or “final changes.”
+
+Examples
+feat(lang): add Polish language
+fix(auth): handle null token correctly
+docs: update README with setup instructions
+refactor(parser): simplify error handling
+chore: update dependencies
+
+
+👉 In short:
+Conventional Commits = a rulebook for commit messages so they’re consistent, machine-readable, and meaningful

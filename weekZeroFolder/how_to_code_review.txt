@@ -1,0 +1,47 @@
+🔍 Key Takeaways from Google’s “How to Do a Code Review”
+
+Focus on clarity & correctness
+
+Review for correctness first (bugs, logic issues).
+
+Then style, readability, maintainability.
+
+What to Look For
+
+Code that’s too complex, try to simplify.
+
+Names of things: classes, variables, functions should clearly express purpose.
+
+Tests: are there enough tests? Do they cover edge cases?
+
+Documentation/comments: is it clear why things are done a certain way—not just what is done.
+
+Navigating a Change List (CL)
+
+Start high-level: read summary of the changes.
+
+Then dive into individual files. Don’t get lost in small details before you understand the big picture.
+
+Speed of Reviews
+
+Don’t let reviews drag on too long.
+
+Fast feedback helps momentum.
+
+But don’t rush — quality matters.
+
+Writing Review Comments
+
+Be specific: quote or refer to lines.
+
+Use kind language (“Could we…”, “What about…”).
+
+Suggest fixes, not only point out problems.
+
+Avoid vague comments (“this is bad”). Instead: “this might be clearer if you renamed X to Y because…”
+
+Handling Pushback
+
+Be open to discussion. Sometimes reviewer and author have different valid opinions.
+
+Focus on shared goals (code quality, maintainability).
