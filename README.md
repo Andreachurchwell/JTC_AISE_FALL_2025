@@ -89,7 +89,8 @@ I used NBA team per-game stats (2024–25 season) to practice:
 
 ### 🏀 3-Point Reliance
 <div align="center">
-  <img src="practice/assets/3pt_reliance_w_l_avg_in_red.png" width="700">
+  <!-- <img src="practice/assets/3pt_reliance_w_l_avg_in_red.png" width="700"> -->
+  <img src="practice/assets/3pt_reliance_w_league_avg_in_red.png" width="700">
 </div>
 
 ---
