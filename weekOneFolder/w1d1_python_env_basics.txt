@@ -1,0 +1,11 @@
+Overview
+This class guides you in setting up a professional Python environment, applying problem decomposition, building programs with functions and data types, debugging errors, and connecting coding skills to real-world applications and career growth.
+
+Key Definitions
+Development Environment: Your complete setup for writing, testing, and debugging code
+Virtual Environment: Isolated Python setup preventing conflicts between projects
+Function: Reusable code block that performs a specific task
+Decomposition: Breaking complex problems into smaller, solvable pieces
+Debugging: Systematic process of finding and fixing errors
+IDE: Integrated Development Environment providing tools for efficient coding
+Variable Scope: Where in your code a variable can be accessed

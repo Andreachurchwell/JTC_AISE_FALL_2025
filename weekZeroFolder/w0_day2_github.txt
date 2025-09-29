@@ -1,0 +1,28 @@
+Overview
+This class builds advanced Git and GitHub skills, from professional branching and pull request workflows to repository best practices, debugging, automation, and collaborative tools for effective team development.
+
+Key Definitions
+Rebase
+Definition: Moving or combining a sequence of commits to a new base commit
+Why It's Important: Maintains linear history and integrates changes cleanly
+Example Prompt: "How do I rebase my feature branch onto the latest main?"
+
+Cherry-pick
+Definition: Applying specific commits from one branch to another
+Why It's Important: Allows selective integration of changes without full merges
+Example Prompt: "Cherry-pick commit abc123 to hotfix branch"
+
+Git Hooks
+Definition: Scripts that run automatically at certain points in Git workflow
+Why It's Important: Enforces standards and automates quality checks
+Example Prompt: "Create a pre-commit hook to run linting"
+
+Force Push
+Definition: Overwriting remote history with local history
+Why It's Important: Dangerous but sometimes necessary; must understand implications
+Example Prompt: "When is it safe to use git push --force-with-lease?"
+
+Squash
+Definition: Combining multiple commits into a single commit
+Why It's Important: Cleans up history before merging feature branches
+Example Prompt: "How do I squash my last 3 commits?"
