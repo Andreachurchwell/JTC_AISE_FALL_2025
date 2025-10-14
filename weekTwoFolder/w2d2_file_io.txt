@@ -1,0 +1,23 @@
+This class teaches you how to work with files and external data in Python — reading and writing text, JSON, and CSV, making API requests, handling errors, and transforming data across formats.
+
+Key Definitions
+File Handle
+Definition: An object that provides access to an underlying file resource
+Why It's Important: Manages the connection between your program and the file system
+Example Prompt: "How do I open a file in Python for reading?"
+JSON (JavaScript Object Notation)
+Definition: A lightweight data format for storing and exchanging structured data
+Why It's Important: Standard format for APIs and configuration files
+Example Prompt: "Convert my Python dictionary to JSON format"
+CSV (Comma-Separated Values)
+Definition: A simple file format for storing tabular data in plain text
+Why It's Important: Common format for spreadsheet data and data analysis
+Example Prompt: "Read data from a CSV file into Python"
+API (Application Programming Interface)
+Definition: A set of rules for accessing web-based software applications
+Why It's Important: Allows programs to communicate and share data
+Example Prompt: "How do I get weather data from an API in Python?"
+Exception Handling (Review from W1D4)
+Definition: Code that manages errors gracefully without crashing
+Why It's Important: Makes programs robust and user-friendly
+Example Prompt: "Handle file not found error in Python"

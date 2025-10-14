@@ -1,0 +1,71 @@
+🗂️ File I/O & External Data – Quick Review
+1️⃣ File Handles (Text Files)
+with open("notes.txt", "r") as f:
+    text = f.read()
+print(text)
+
+with open("output.txt", "w") as f:
+    f.write("Hello Andrea!\n")
+
+
+✅ with open() auto-closes the file
+✅ Modes: "r" read, "w" write (overwrites), "a" append
+
+2️⃣ JSON (structured data)
+import json
+
+# write
+data = {"user": "andrea", "age": 43, "pet": "Louie"}
+with open("user.json", "w") as f:
+    json.dump(data, f, indent=2)
+
+# read
+with open("user.json", "r") as f:
+    info = json.load(f)
+print(info["user"])   # andrea
+
+
+✅ JSON = Python dictionary ↔ text file
+✅ .dump() / .load() for file, .dumps() / .loads() for string
+
+3️⃣ CSV (tabular data)
+import csv
+
+with open("users.csv", "w", newline="") as f:
+    writer = csv.writer(f)
+    writer.writerow(["id", "name", "email"])
+    writer.writerow([1, "Andrea", "a@ex.com"])
+
+with open("users.csv") as f:
+    reader = csv.reader(f)
+    for row in reader:
+        print(row)
+
+
+✅ writerow() adds one row at a time
+✅ DictWriter/DictReader let you use headers easily
+
+4️⃣ API (External Data)
+import requests, json
+
+r = requests.get("https://jsonplaceholder.typicode.com/users")
+data = r.json()
+print(data[0]["name"])
+
+with open("api_users.json", "w") as f:
+    json.dump(data, f, indent=2)
+
+
+✅ Always check .status_code or wrap in try/except
+✅ Combine API → JSON → CSV (like you just did!)
+
+5️⃣ Exception Handling
+try:
+    with open("missing.txt") as f:
+        text = f.read()
+except FileNotFoundError:
+    print("⚠️ File not found!")
+
+
+✅ Use specific errors (FileNotFoundError, ValueError, KeyError, etc.)
+✅ Keeps program from crashing

@@ -1,0 +1,39 @@
+What to Think About Before Class
+
+Recent moments of curiosity
+When was the last time you asked “why” or “how” while coding, even if it slowed you down? (Like you did with list comprehensions the other day).
+
+Challenges that frustrate you
+Think of one recent coding bug, concept, or even class moment that made you feel stuck. How could curiosity (vs. self-criticism) have shifted how you approached it?
+
+Adaptive skills
+Adaptive = adjusting when things change. Can you recall a time in your learning where you had to pivot strategies (e.g., switching from trying to be “the fastest” to doing things your way, slower and deeper)?
+
+🛠️ Micro-Prep Activities
+
+Write down 2–3 questions you’re genuinely curious about (doesn’t have to be code-only — could be about careers, habits, or tech tools). Having them ready might help if they put you in breakout groups.
+
+Reflect on yesterday’s homework — what part made you want to dig deeper (like when you asked “why should I use a helper function?”). That’s curiosity in action!
+
+Think about connections — how might curiosity in coding (e.g., experimenting with test cases) look similar to curiosity in life (e.g., trying a new routine, or asking someone how they solved a problem)?
+
+💡 Mindset Going In
+
+Instead of “I need to get everything right,” shift it to:
+
+“What can I notice here?”
+
+“What new question can I walk away with?”
+
+“How can I let myself explore, not just solve?”
+
+
+
+👉 “Can you think of a time recently where you had to adjust or change your approach because the way you were trying at first wasn’t working?”
+In our breakout group last night, we made a point not to rely on AI or rush to finish everything. Instead, we focused on doing the problems the long way first before turning them into list comprehensions. That shift really helped me slow down and understand better, and it was a great experience.
+
+👉 Can you think of something outside of coding — maybe in your daily life — where curiosity made you stop and wonder “why” or “how” recently?
+Outside of coding, I’ve been curious about how people manage networking, because for me it feels really draining. I catch myself asking how others do it and make it seem natural.
+
+👉 Can you think of a time lately when being curious actually helped you learn something new or see things differently than before?
+Sometimes I wonder why things don’t click as fast for me, but when I slow down and work through what I can, I actually feel like I’m learning more.

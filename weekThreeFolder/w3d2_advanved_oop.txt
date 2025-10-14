@@ -1,0 +1,33 @@
+This class deepens students’ understanding of advanced object-oriented programming by exploring inheritance, polymorphism, and abstraction in Python, connecting these concepts to UML design tools and software engineering best practices through hands-on coding and collaborative design exercises.
+
+Key Definitions
+Inheritance
+
+What it is: One class (child) reuses code from another (parent).
+What it’s good for: Reduces duplication, models hierarchies.
+Why use it today: Keeps systems reusable and maintainable.
+Real-world example: Vehicle → Car, Truck, Motorcycle.
+Polymorphism
+
+What it is: Same method name, different behaviors across classes.
+What it’s good for: Flexible, extensible code.
+Why use it today: APIs and libraries rely on it for adaptability.
+Real-world example: draw() in Circle, Rectangle, Triangle.
+Abstract Classes
+
+What it is: Blueprints that cannot be instantiated, but enforce required methods.
+What it’s good for: Ensures consistency across subclasses.
+Why use it today: Guarantees critical behaviors are implemented in large systems.
+Real-world example: Payment abstract class → CreditCardPayment, PayPalPayment.
+UML Hierarchies
+
+What it is: Visual diagrams showing class relationships.
+What it’s good for: Helps design and communicate system architecture.
+Why use it today: Crucial for team collaboration before coding.
+Real-world example: UML for e-commerce with Product, Payment, and ShoppingCart.
+Design Trade-offs (Inheritance vs Composition)
+
+What it is: Inheritance = “is-a”; Composition = “has-a”.
+What it’s good for: Picking the right approach avoids complexity.
+Why use it today: Flexible systems often need composition instead of rigid hierarchies.
+Real world example: ShoppingCart has Products (composition), not is a Product.

@@ -22,3 +22,11 @@ Thumbs.db
 
 
 coursera/
+
+# --- Ignore personal and temp files ---
+questions_for_asha.txt
+*.csv
+*.json
+
+__pycache__/
+.venv/

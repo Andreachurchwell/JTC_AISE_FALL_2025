@@ -1,0 +1,13 @@
+This class builds on your problem decomposition and control flow skills to introduce Python’s core data structures, showing how to use them to write more efficient, modular, and real-world-ready applications.
+
+Key Definitions
+List: Ordered, mutable collection of items accessed by index
+Dictionary: Collection of key-value pairs for fast lookup
+Set: Unordered collection of unique items
+Tuple: Ordered, immutable collection
+Index: Position number in a list (starting at 0)
+Key: Unique identifier in a dictionary
+Mutable: Can be changed after creation
+Immutable: Cannot be changed after creation
+Time Complexity: How execution time grows with input size
+Data Structure: Way of organizing data for efficient access

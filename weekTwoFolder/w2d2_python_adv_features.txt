@@ -1,0 +1,31 @@
+This class shows you how to use advanced Python features — decorators, generators, context managers, and functools utilities — to write more efficient, Pythonic, and professional code.
+
+Key Definitions
+Decorator
+Definition: A function that takes another function and extends its behavior without explicitly modifying it
+Why It's Important: Allows clean separation of concerns (logging, timing, authentication) used extensively in frameworks like Flask and Django
+Example Prompt: "How do I add logging to all my functions without modifying them?"
+
+
+Generator
+Definition: A function that returns an iterator using the yield keyword, producing values on-demand rather than all at once
+Why It's Important: Essential for processing large datasets that don't fit in memory, used in data pipelines and streaming applications
+Example Prompt: "How can I process a 10GB file without loading it all into memory?"
+
+
+Context Manager
+Definition: An object that defines methods to be executed at the start and end of a with block for resource management
+Why It's Important: Ensures proper cleanup of resources (files, network connections, locks) preventing memory leaks and data corruption
+Example Prompt: "How do I guarantee my database connection closes even if an error occurs?"
+
+
+Functools
+Definition: A module providing higher-order functions and operations on callable objects
+Why It's Important: Contains performance optimization tools and functional programming utilities used in production Python code
+Example Prompt: "How can I cache expensive function results automatically?"
+
+
+Closure
+Definition: A function object that remembers values in enclosing scopes even after they finish executing
+Why It's Important: Foundation for decorators and many advanced Python patterns
+Example Prompt: "Why can my inner function access variables from the outer function?"

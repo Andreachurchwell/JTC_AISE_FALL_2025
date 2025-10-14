@@ -1,0 +1,36 @@
+Overview
+This class introduces the foundations of object-oriented programming in Python, teaching you how to define classes, create objects, use attributes and methods, and apply OOP to model real-world problems.
+
+Key Definitions
+Class
+Definition: A blueprint or template for creating objects
+Why It's Important: Bundles data and functionality together in a reusable way
+Example Prompt: "Create a Python class to represent a bank account"
+Object/Instance
+Definition: A specific realization of a class with actual values
+Why It's Important: Represents individual entities with their own data
+Example Prompt: "Create two student objects from the Student class"
+Attribute
+Definition: A variable that belongs to an object or class
+Why It's Important: Stores the state/data of objects
+Example Prompt: "Add name and age attributes to my Person class"
+Method
+Definition: A function defined inside a class that operates on objects
+Why It's Important: Defines behaviors and actions objects can perform
+Example Prompt: "Add a method to calculate student GPA"
+Constructor (__init__)
+Definition: Special method that initializes new objects when created
+Why It's Important: Sets up initial state for every new object
+Example Prompt: "How do I set initial values when creating an object?"
+
+
+https://www.youtube.com/watch?v=AtcWP8LZoLo
+
+
+Encapsulation allows you to bundle data (attributes) and behaviors (methods) within a class to create a cohesive unit. By defining methods to control access to attributes and its modification, encapsulation helps maintain data integrity and promotes modular, secure code.
+
+Inheritance enables the creation of hierarchical relationships between classes, allowing a subclass to inherit attributes and methods from a parent class. This promotes code reuse and reduces duplication.
+
+Abstraction focuses on hiding implementation details and exposing only the essential functionality of an object. By enforcing a consistent interface, abstraction simplifies interactions with objects, allowing developers to focus on what an object does rather than how it achieves its functionality.
+
+Polymorphism allows you to treat objects of different types as instances of the same base type, as long as they implement a common interface or behavior. Python’s duck typing make it especially suited for polymorphism, as it allows you to access attributes and methods on objects without needing to worry about their actual class.
