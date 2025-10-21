@@ -1,0 +1,45 @@
+| Pattern               | What It Means                                                                              | ML Example                                                                                                 |
+| --------------------- | ------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------- |
+| **Strategy Pattern**  | Lets you swap out different algorithms or models without changing the main pipeline logic. | Switching between `LogisticRegression`, `KNN`, or `SVM` during model selection.                            |
+| **Factory Pattern**   | Central place that *creates* model objects or preprocessing components as needed.          | A function or class that returns a model instance based on user input (`"linear"` → `LinearRegression()`). |
+| **Observer Pattern**  | Automatically updates parts of your system when data or state changes.                     | A training monitor that updates charts or logs whenever a model finishes an epoch.                         |
+| **Singleton Pattern** | Ensures only one instance of something exists globally.                                    | One configuration manager that handles all your dataset paths or random seeds.                             |
+
+
+
+🧩 Why It’s Important
+
+In regular ML code, people often end up with messy notebooks full of repeated logic — e.g., same training code for multiple models.
+Design patterns help you:
+
+Reuse code (DRY principle)
+
+Keep pipelines modular and readable
+
+Scale from one model to many
+
+Make debugging and testing easier
+
+In this class, fellows will learn to apply key software design patterns—Factory, Strategy, Observer, and Singleton—to machine learning workflows, enabling them to build flexible, maintainable, and production-ready ML systems while avoiding over-engineering.
+
+Key Definitions
+Factory Pattern
+Definition: A creational pattern that provides an interface for creating objects without specifying their exact classes.
+Why It's Important: In ML, you often need to create different model types based on configuration, data characteristics, or runtime decisions.
+Real-World Analogy: Like a car factory that can produce different models (sedan, SUV, truck) based on the order specification.
+ML Application: Dynamically creating different ML algorithms (RandomForest, SVM, Neural Network) based on data type or user selection.
+Strategy Pattern
+Definition: A behavioral pattern that defines a family of algorithms, encapsulates each one, and makes them interchangeable.
+Why It's Important: ML workflows often need to switch between different algorithms, preprocessing steps, or evaluation metrics.
+Real-World Analogy: Like choosing different transportation strategies (car, bike, walk) based on distance and conditions.
+ML Application: Switching between classification algorithms or feature engineering strategies without changing the main pipeline code.
+Observer Pattern
+Definition: A behavioral pattern that defines a dependency between objects so that when one object changes state, all dependents are notified.
+Why It's Important: ML systems need monitoring, logging, and real-time updates when models retrain or performance changes.
+Real-World Analogy: Like a newsletter subscription - when new content is published, all subscribers get notified automatically.
+ML Application: Monitoring model performance, triggering retraining, updating dashboards when predictions complete.
+Singleton Pattern
+Definition: A creational pattern that ensures a class has only one instance and provides global access to it.
+Why It's Important: ML systems often need single points of configuration, logging, or resource management.
+Real-World Analogy: Like a company having exactly one CEO - there's only one person in that role at any time.
+ML Application: Configuration managers, database connections, model registries that should exist only once per application.
