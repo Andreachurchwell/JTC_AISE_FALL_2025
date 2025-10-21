@@ -105,4 +105,35 @@
 # print(getGrade(93))  # "A"
     
         
-        
+def make_counter():
+    count = 0
+    def increment():
+        nonlocal count
+        count += 1
+        return count
+    return increment
+
+c = make_counter()
+print(c())  # 1
+print(c())  # 2
+
+def outer():
+    x = 0
+    def inner():
+        nonlocal x
+        x += 1
+        return x
+    return inner
+print(outer(
+
+))
+
+
+# “A closure is when a function keeps a memory of a variable from the outside — it’s a neat way to store state without using a class. The nonlocal keyword lets that inner function actually change that variable instead of just reading it.
+
+# Then classes come in when we want to structure data and behavior together. Each object, or instance, gets its own data, but all share the same methods.
+
+# Encapsulation is about keeping our data safe and organized inside the class. We can make things private with two underscores to stop direct access.
+
+# Finally, inheritance is how we reuse and extend code. If I make a Puppy from a Dog class, it automatically gets everything a Dog has — I can just override what I want to behave differently.”
+   

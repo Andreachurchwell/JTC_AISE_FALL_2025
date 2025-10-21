@@ -1,0 +1,39 @@
+Overview
+This class focuses on mastering closures and encapsulation in Python, teaching how to maintain private state, correctly use super() and inheritance, and connect these concepts to modular, well-structured code design, while reinforcing debugging skills for scope and attribute issues.
+
+Key Definitions
+
+Closure
+Definition: A function object that has access to variables in its lexical scope, even when the function is called outside that scope.
+Why It's Important: Enables data privacy, state persistence between calls, and functional programming patterns in Python.
+Example Prompt: "Create a counter function that remembers its count between calls"
+
+nonlocal
+Definition: A keyword that allows a nested function to modify variables in the enclosing scope.
+Why It's Important: Without nonlocal, inner functions can only read (not modify) outer variables.
+Example Prompt: "How do I modify an outer function's variable from an inner function?"
+
+Class
+Definition: A blueprint or template for creating objects that bundles data (attributes) and functions (methods) together.
+Why It's Important: Primary mechanism for organizing code and implementing object-oriented programming in Python.
+Example Prompt: "Create a Dog class with name and breed attributes"
+
+Instance
+Definition: A specific object created from a class blueprint, with its own unique set of attribute values.
+Why It's Important: Each instance maintains its own state while sharing methods with other instances of the same class.
+Example Prompt: "Create two different Dog objects from the Dog class"
+
+Method
+Definition: A function defined inside a class that operates on instance data and typically takes self as its first parameter.
+Why It's Important: Methods encapsulate behavior with the data they manipulate, core to object-oriented design.
+Example Prompt: "Add a bark() method to the Dog class"
+
+Encapsulation
+Definition: The bundling of data and methods that operate on that data within a single unit (class), with controlled access.
+Why It's Important: Protects internal state, prevents unauthorized access, and maintains data integrity.
+Example Prompt: "How do I make class attributes private in Python?"
+
+Inheritance
+Definition: A mechanism where a new class is created based on an existing class, inheriting its attributes and methods.
+Why It's Important: Promotes code reuse, establishes relationships between classes, and enables polymorphic behavior.
+Example Prompt: "Create a Puppy class that inherits from Dog"
