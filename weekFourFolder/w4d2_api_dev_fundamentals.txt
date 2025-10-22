@@ -3,13 +3,19 @@ This class deepens students’ understanding of advanced object-oriented program
 Key Definitions
 API (Application Programming Interface)
 Definition: A set of protocols, routines, and tools that specify how software components should interact.
+
 Why It's Important: APIs enable different systems to communicate, making ML models accessible to web apps, mobile apps, and other services.
+
 Real-World Analogy: Like a restaurant menu - it tells you what you can order (endpoints) and what you'll get back (responses).
+
 ML Application: Exposing trained models so web apps can send data and receive predictions.
+
 REST (Representational State Transfer)
 Definition: An architectural style for designing networked applications using standard HTTP methods and URLs.
+
 Why It's Important: Provides consistent, predictable patterns for API design that developers worldwide understand.
 Real-World Analogy: Like a standardized filing system - everyone knows where to find what they need.
+
 Key Principles:
 Resources are identified by URLs (/users/123, /models/predictions)
 HTTP methods indicate actions (GET = read, POST = create, etc.)
@@ -17,13 +23,17 @@ Stateless - each request contains all needed information
 FastAPI
 Definition: A modern, fast Python web framework for building APIs with automatic documentation and validation.
 Why It's Important: Combines the design patterns we learned with modern web development practices.
+
 Key Features:
 Automatic API documentation (Swagger UI)
 Built-in data validation using Pydantic
 High performance
 Type hints integration
+
+
 HTTP Status Codes
 Definition: Three-digit numbers that indicate the outcome of HTTP requests.
+
 Why They're Important: Provide standardized way to communicate what happened with an API request.
 Common Codes:
 2xx Success: 200 (OK), 201 (Created), 204 (No Content)
