@@ -1,0 +1,42 @@
+CI/CD stands for Continuous Integration and Continuous Deployment (or Continuous Delivery). It's a set of practices and tools designed to improve the software development process by automating builds, testing, and deployment, enabling you to ship code changes faster and reliably.
+
+Continuous integration (CI): Automatically builds, tests, and integrates code changes within a shared repository
+
+Continuous delivery (CD): automatically delivers code changes to production-ready environments for approval
+
+Continuous deployment (CD): automatically deploys code changes to customers directly
+
+What makes CI/CD successful
+You’ll find different tools and integrations everywhere you look, but effective CI/CD workflows all share the same markers of success.
+
+Automation: CI/CD can be done manually—but that’s not the goal. A good CI/CD workflow automates builds, testing, and deployment so you have more time for code, not more tasks to do.
+
+Transparency: If a build fails, developers need to be able to quickly assess what went wrong and why. Logs, visual workflow builders, and deeply integrated tooling make it easier for developers to troubleshoot, understand complex workflows, and share their status with the larger team.
+
+Speed: CI/CD contributes to your overall DevOps performance, particularly speed. DevOps experts gauge speed using two DORA metrics: Lead time for changes (how quickly commits are made to code in production) and deployment frequency (how often you commit code).
+
+Resilience: When used with other approaches like test coverage, observability tooling, and feature flags, CI/CD makes software more resistant to errors. DORA measures this stability by tracking mean time to resolution (how quickly incidents are resolved) and change failure rate (the number of software rollbacks).
+
+Security: Automation includes security. With DevSecOps gaining traction, a future-proof CI/CD pipeline has checks in place for code and permissions, and provides a virtual paper trail for auditing failures, security breaches, non-compliance events.
+
+Scalability: CI/CD isn't just about automation; it's also about ensuring scalability. A robust CI/CD setup should effortlessly expand with your growing development team and project complexity. This means it can efficiently handle increased workloads as your software development efforts grow, maintaining productivity and efficiency.
+
+
+golang goals consistent, easy to understand, easy to change loosely-coupled, easy to test, simple as possible but no simpler, design relfects exactly how the software works, structure reflects the design exactly
+
+
+
+
+
+This class focused on understanding the purpose of CI/CD pipelines, distinguishing between Continuous Integration, Delivery, and Deployment, and hands-on practice creating, triggering, troubleshooting, and extending GitHub Actions workflows for automated testing and deployment.
+
+Key Definitions
+Continuous Integration (CI): Merging code frequently into main branch with automated builds/tests.
+Continuous Delivery (CD): Ensuring code is always deployable; may require manual approval.
+Continuous Deployment: Fully automating deploys after CI passes.
+Workflow: YAML file describing jobs that run on GitHub Actions.
+Job: A group of steps executed on a runner.
+Runner: VM/container that executes workflow steps.
+Trigger: Event that starts a workflow (push, pull_request, schedule).
+Artifact: Files produced during a workflow run.
+Idempotent Build: A build that produces the same result every time, no matter how many times it runs.

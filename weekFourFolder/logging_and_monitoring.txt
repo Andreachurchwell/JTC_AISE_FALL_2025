@@ -1,0 +1,15 @@
+In this class, fellows will learn to implement structured logging, health probes, and metrics in FastAPI, using tools like Prometheus and JSON logs to enhance observability, reliability, and real-time monitoring of API performance and health.
+
+Key Definitions
+Observability: Ability to understand internal state from external outputs (logs, metrics, traces).
+Structured Logging: Logs as key/value records (commonly JSON) for reliable parsing and search.
+Correlation/Request ID: A unique ID per request to tie together all related log lines.
+Liveness Probe (/health): Answers “is the process alive?” Failing should restart the container.
+Readiness Probe (/ready): Answers “should we send traffic here?” Failing should remove from load balancer but not restart.
+Startup Probe: Grace period for long initialization before liveness/readiness checks.
+Metrics:
+Counter: Monotonic increasing value (e.g., requests_total).
+Gauge: Up/down current value (e.g., in-flight requests).
+Histogram: Distribution of observations (e.g., request latency).
+Golden Signals: Latency, traffic, errors, saturation.
+Label Cardinality: Number of unique label combinations; too high causes memory and cost issues.
