@@ -1,0 +1,161 @@
+✅ 1. What is Event-Driven Architecture?
+
+Systems talk to each other by sending events, not by calling each other directly.
+
+Event = “something happened.”
+
+Examples:
+
+User signed up
+
+Order created
+
+Payment failed
+
+Weather data updated
+
+Instead of A calling B →
+A just publishes an event → B listens when it’s ready.
+
+This makes systems looser, faster, and more reliable.
+
+--------------------------------------------------------
+
+✅ 2. Two main tools: RabbitMQ vs Kafka
+
+This is tonight’s big topic.
+
+✅ RabbitMQ → queues / jobs
+
+One message → one worker
+
+Used for tasks that must be done once
+
+Email sending, video processing, background tasks
+
+Think: a line of chores.
+✅ Kafka → event streams
+
+One message → many consumers can read it
+
+Stores history of events
+
+Used for analytics, logs, tracking, recommendations
+
+Think: a live feed everyone can subscribe to.
+
+-------------------------------------------------------
+✅ 3. When to use each
+✅ Use RabbitMQ when:
+
+You need tasks completed exactly once
+
+You want workers to share the workload
+
+You care about job order per worker
+
+You need back-pressure (slow down producers)
+
+✅ Use Kafka when:
+
+Many systems need the same data
+
+You want to replay history
+
+You have high-throughput data
+
+You need analytics or real-time processing
+
+--------------------------------------------------------------
+✅ 4. Words you’ll hear (and what they mean in English)
+✅ Queue
+
+A line of messages waiting for workers (RabbitMQ).
+--------------------------------------------------------------
+✅ Pub/Sub (Publish/Subscribe)
+
+Producer sends → many subscribers receive (Kafka).
+-------------------------------------------------------------
+✅ Consumer Group
+
+A team of workers sharing the work on a topic (Kafka).
+--------------------------------------------------------------
+✅ Partition
+
+Kafka splits data into pieces to process faster.
+
+Same key → same partition → ordering within that partition.
+--------------------------------------------------------------
+✅ Back-pressure
+
+Workers say:
+
+“Stop sending, I’m overwhelmed.”
+
+(RabbitMQ uses prefetch for this.)
+---------------------------------------------------------------------
+✅ Idempotency
+
+Doing the same message twice = same effect.
+Important when messages get duplicated.
+---------------------------------------------------------------------
+✅ DLQ — Dead Letter Queue
+
+Messages that fail too many times go here.
+---------------------------------------------------------------------
+✅ At-least-once delivery
+
+Messages might be delivered twice (normal).
+---------------------------------------------------------------------
+✅ Exactly-once delivery
+
+Hard, only certain systems support it with special setup.
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------
+Overview
+This class explains the purpose of event-driven systems, when to use queues versus pub/sub streams, and provides hands-on experience with RabbitMQ and Kafka while comparing their tradeoffs for different use cases.
+
+Key Definitions
+Event-Driven Architecture (EDA)
+
+Systems communicate via events (state changes) instead of synchronous RPC.
+
+Queue (P2P)
+
+Work distribution: each message goes to one consumer. RabbitMQ excels here.
+
+Pub/Sub Stream
+
+Broadcast: many subscribers receive the same event stream (Kafka topics).
+
+Consumer Group
+
+Kafka: partitions are divided among consumers in a group for parallelism.
+
+Partition & Key
+
+Kafka routes records with the same key to the same partition (ordering within partition).
+
+Back-Pressure
+
+Slowing producers/consumers to avoid overload (e.g., RabbitMQ prefetch).
+
+Idempotency
+
+Processing the same message n times safely produces one effect (dedup keys).
+
+DLQ (Dead-Letter Queue)
+
+Holding area for messages that repeatedly fail processing.
+
+Exactly-once / At-least-once
+
+Delivery semantics; most systems start at-least-once; exactly-once needs special support/config.
+

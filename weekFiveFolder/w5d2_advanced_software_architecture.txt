@@ -1,0 +1,38 @@
+This class explored the importance of architecture decisions at scale, introduced Domain-Driven Design and Hexagonal Architecture principles, practiced refactoring applications into layered structures, and connected architectural clarity to more efficient and reliable CI/CD pipelines.
+
+Key Definitions
+Domain-Driven Design (DDD)
+
+Modeling software closely to the problem domain, using business language and bounded contexts.
+
+Entity
+
+A domain object with identity (persistent across state changes).
+
+Value Object
+
+Immutable object defined by its attributes (equality by value).
+
+Aggregate / Aggregate Root
+
+A cluster of domain objects treated as one consistency boundary, controlled via root.
+
+Repository
+
+Abstraction for retrieving and storing aggregates, hiding persistence detail.
+
+Domain Service
+
+Business logic not naturally belonging to one entity (e.g. process orchestration).
+
+Hexagonal Architecture
+
+Also called Ports & Adapters; isolates the core domain from external dependencies via interfaces (ports) and adapters.
+
+Dependency Inversion
+
+High-level modules (domain) depend on abstractions, not concrete infrastructure code.
+
+Testing Pyramid
+
+Many fast unit tests at bottom, fewer integration tests, fewest end-to-end tests.
