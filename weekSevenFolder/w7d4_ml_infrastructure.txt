@@ -1,0 +1,179 @@
+🔹 1. What you’re learning (in normal-people words)
+
+Tonight is about how real ML systems run in production.
+
+Not just “training a model,” but:
+
+Where do features live?
+
+How do we keep track of experiments?
+
+How do we store all the files/models/metrics?
+
+How do we know which model is the latest? Best? Worst?
+
+How do we deploy changes safely?
+
+This is the “plumbing/carpentry” behind real ML teams.
+
+
+----------------------------------------------------------------------------
+
+🔹 2. The Key Terms — explained SUPER simply
+Feature Store
+
+A feature store is like a pantry for ML.
+
+You put your good, cleaned-up features in there
+(like: avg points per game, 3-day weather rolling avg, win/loss ratio).
+
+The store serves these features to training and real-time predictions.
+
+Why:
+Without it, every engineer creates features differently → chaos.
+
+-----------------------------------------------------------------------------
+
+Model Registry
+
+A model registry is GitHub for your models.
+
+It tracks:
+
+every model version
+
+who trained it
+
+what data it used
+
+its accuracy
+
+if it’s approved for production
+
+if it's active/live
+
+if it's archived
+
+-----------------------------------------------------------------------------
+
+Experiment Tracking
+
+This is like a notebook for all your model attempts.
+
+You record:
+
+parameters (learning rate, features used, model type)
+
+metrics (accuracy, MSE, AUC)
+
+notes / artifacts
+
+Why:
+When someone says “which model was best?” you can answer.
+
+-----------------------------------------------------------------------------
+
+Lineage
+
+The history of how data/model got to this point.
+
+Like:
+
+“This model was trained on dataset v2”
+
+“Dataset v2 was created after cleaning v1”
+
+“These features came from the Feature Store”
+
+It tells the story of the model.
+
+------------------------------------------------------------------------------
+
+Reproducibility
+
+If someone runs your code again tomorrow → they should get the same results.
+
+This requires:
+
+versioned data
+
+versioned code
+
+fixed parameters
+
+environment control
+
+-------------------------------------------------------------------------------
+
+MLOps
+
+This is DevOps + ML.
+
+It focuses on:
+
+monitoring models
+
+versioning data
+
+retraining pipelines
+
+deployment
+
+CI/CD for ML (automate training and releasing new models)
+
+---------------------------------------------------------------------------------
+
+Artifact Store
+
+A big storage bucket for:
+
+model files
+
+logs
+
+plots
+
+datasets
+
+metrics
+
+preprocessing steps
+
+Versioning
+
+Putting a label on:
+
+model versions
+
+dataset versions
+
+code versions
+
+Example: model_v3, dataset_2024_Jan_cleaned
+
+----------------------------------------------------------------------
+
+🔹 3. If they ask you “What stands out to you?”
+
+You can safely say something like:
+
+Option A — Feature Store Focus
+
+“The Feature Store stands out to me because it solves the biggest problem I’ve seen: everybody making features differently. I like that it keeps features consistent across training and production.”
+
+Option B — Model Registry Focus
+
+“The Model Registry makes sense to me because it acts like version control for models. I like the idea of not guessing which model is the best or most recent.”
+
+Option C — Experiment Tracking
+
+“Experiment tracking stands out because it helps avoid confusion. It’s like leaving breadcrumbs so you know what worked and why.”
+
+
+-----------------------------------------------------------------------------------
+
+🔹 4. If they ask you “Why does MLOps matter?”
+
+Use this simple line:
+
+“Because real ML systems constantly change — data changes, models drift, new versions come out. MLOps keeps all that organized and makes sure models are reproducible, trackable, and safe to deploy.”

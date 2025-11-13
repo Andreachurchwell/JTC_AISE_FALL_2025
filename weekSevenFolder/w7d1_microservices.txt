@@ -1,0 +1,121 @@
+Overview
+In this class, you learn what microservices are, how they differ from monolithic systems, and how to design, connect, and deploy small Python-based services while understanding key trade-offs like latency and consistency.
+
+Key Definitions
+Microservice
+
+A small, autonomous service focused on one business capability.
+
+Monolith
+
+A single codebase handling all app logic and data.
+
+API Gateway
+
+A front door routing requests to internal microservices.
+
+Synchronous Communication
+
+Request-response pattern (e.g., REST, gRPC).
+
+Asynchronous Communication
+
+Event-driven, decoupled pattern (e.g., RabbitMQ, Kafka).
+
+Bounded Context
+
+A logical boundary in domain-driven design where a domain model applies.
+
+Service Contract
+
+A documented interface (API schema, message format) defining how services communicate.
+
+Idempotency
+
+Property ensuring repeated requests don’t cause unintended side effects.
+
+Circuit Breaker
+
+A fault tolerance pattern that prevents cascading failures.
+
+
+
+✅ Rapid Pre-Class Prep (15–20 minutes)
+1. Lock in the “one-line” definitions
+
+Say these out loud once:
+
+Microservice
+
+A small service that owns one job and one slice of data.
+
+Monolith
+
+One big application where everything lives in the same codebase.
+
+API Gateway
+
+A front door that routes incoming requests to the correct microservice.
+
+Synchronous
+
+You ask, the service answers immediately (REST, gRPC).
+
+Asynchronous
+
+You send a message and don’t wait for a response (Kafka, RabbitMQ).
+
+Bounded Context
+
+A domain boundary where a model and rules make sense.
+Example: “Payments” is separate from “Orders.”
+
+Service Contract
+
+The agreement on how services talk (API schema, message format).
+
+Idempotent
+
+Same request repeated = same result.
+
+Circuit Breaker
+
+A safety switch that stops calling a failing service.
+
+You don’t need more than that for class.
+
+✅ 2. The three things microservices fix
+
+Say these to yourself:
+
+Scaling one part of an app without scaling everything.
+
+Keeping teams independent.
+
+Letting each service pick its own language or database.
+
+✅ 3. The three problems they create
+
+This impresses instructors because most students forget this part.
+
+More network traffic → more latency.
+
+More failure points.
+
+Harder debugging because the system is spread out.
+
+(If you remember just these, you’ll sound prepared.)
+
+✅ 4. The quick examples you can give if asked
+Example of a microservice
+
+Auth service that only handles login.
+
+Example of synchronous call
+
+User clicks “Buy,” service calls Payments and waits.
+
+Example of asynchronous
+
+Order service publishes “order_created” and the Shipping service listens.
+
