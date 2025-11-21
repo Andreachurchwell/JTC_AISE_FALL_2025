@@ -1,0 +1,66 @@
+Performance Optimization
+Overview
+This class teaches fellows how to profile, optimize, and scale Python applications by identifying performance bottlenecks, applying caching and async strategies, optimizing database and API operations, and measuring real-world performance improvements through benchmarking and monitoring.
+
+Key Definitions
+Profiling
+Definition: The process of measuring program performance to identify bottlenecks, memory usage, and execution time distribution.
+
+Why It's Important: Optimization without measurement is guesswork. Profiling shows you exactly where time is spent.
+
+Real-World Analogy: Like a medical check-up - you need to diagnose before you can treat effectively.
+
+Tools: cProfile, line_profiler, memory_profiler, py-spy
+
+Caching
+Definition: Storing computed results or frequently accessed data in fast storage to avoid expensive recalculation or retrieval.
+
+Why It's Important: Can provide 10x-1000x speedups for repeated operations with minimal code changes.
+Cache Levels:
+
+In-memory: Python dictionaries, LRU cache
+Application-level: Redis, Memcached
+Database-level: Query result caching
+CDN/Edge: Geographic content distribution
+Async Programming
+Definition: Programming paradigm that allows multiple I/O operations to run concurrently without blocking the main thread.
+
+Why It's Important: Dramatically improves throughput for I/O-bound applications like web servers and API clients.
+
+Key Concepts:
+
+Coroutines: Functions defined with async def
+Event Loop: Manages and executes async tasks
+Concurrency: Multiple tasks making progress, not necessarily simultaneously
+Time Complexity
+Definition: How execution time grows with input size, expressed in Big O notation.
+
+Common Complexities:
+
+O(1): Constant time - hash table lookups
+O(log n): Logarithmic - binary search
+O(n): Linear - list iteration
+O(n²): Quadratic - nested loops
+O(2ⁿ): Exponential - recursive algorithms
+
+⏱️ Big O Speed (from fastest to slowest, generally):
+
+O(1) → Constant time
+👉 Always takes the same amount of time — no matter how big the input is
+📌 Example: Looking up a value by key in a Python dictionary (my_dict[key])
+
+O(log n) → Logarithmic time
+👉 Gets slower as input grows, but not by much
+📌 Example: Binary search
+
+O(n) → Linear time
+👉 Takes longer as input grows — if input doubles, time doubles
+📌 Example: Looping over a list to find a match
+
+O(n²) → Quadratic time
+👉 Slow. Nested loops. If input doubles, time goes up by 4x
+📌 Example: Checking all pairs in a list
+
+O(2ⁿ) → Exponential time
+👉 Gets very slow very fast
+📌 Example: Certain recursive algorithms with no caching

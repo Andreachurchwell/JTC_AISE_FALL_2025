@@ -1,0 +1,27 @@
+Overview
+In this class, you learn what microservices are, how they differ from monolithic systems, and how to design, connect, and deploy small Python-based services while understanding key trade-offs like latency and consistency.
+
+Key Definitions
+ETL
+
+Process of Extracting, Transforming, and Loading data into a target system.
+
+Schema Drift
+
+Unexpected changes in structure or data types of incoming data.
+
+Data Validation
+
+Ensuring data matches quality expectations (types, ranges, constraints).
+
+Feature Engineering
+
+Creating new predictive variables from raw data.
+
+Data Lineage
+
+The path data follows through transformations and pipelines.
+
+Airflow DAG
+
+Directed Acyclic Graph representing dependent ETL tasks.
