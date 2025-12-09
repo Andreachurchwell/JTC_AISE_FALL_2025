@@ -1,0 +1,89 @@
+1️⃣ What You Need To Understand
+In plain language…
+User behavior → Kafka → Processing → Features → Model → CAPTCHA
+You are simulating website users
+↓
+Events are streaming through Kafka (like a conveyor belt)
+↓
+A real-time processing engine (Flink + Spark)
+extracts patterns
+↓
+
+Those patterns are stored
+➡ Redis = fast lookup for real-time scoring
+➡ PostgreSQL = historical training & analysis
+↓
+
+A FastAPI service loads those features
+and predicts whether the user is a BOT
+
+↓
+
+If risky → send CAPTCHA
+
+Think of it like this analogy:
+
+Doorbell camera:
+
+📷 Camera → sends events in real time → Kafka
+🧠 Something tracks:
+
+movement patterns
+
+timing
+
+behavior
+→ Flink / Spark
+
+🗄 Redis → stores “what’s happening right now”
+📚 Postgres → stores “what has happened historically”
+
+🤖 Model → “This looks suspicious”
+🚧 Show challenge
+
+That’s all.
+
+
+🟣 Kafka
+message broker
+used for streaming events
+not a database
+consumers read from it in real time
+Kafka is not where features live — it’s where live events pass through.
+
+🔵 Flink
+computes behavioral features
+aggregates events into sessions
+stateful stream processing
+exactly-once guarantees
+This is known as stateful processing, meaning Flink remembers past events for a user.
+“Flink tracks user actions over time, computes session-level behavior, and guarantees correctness using checkpointing.”
+
+🟢 Spark
+computes historical aggregates like IP repuataion
+micro-batch Model
+
+Flink is better for ongoing live behavior of ONE user.
+Spark is better for history across MANY users.
+
+🔴 Redis
+serves as an online feature store
+fast reads(~1-5ms)
+used at inference time
+Redis stores final feature values, not raw events.
+
+🟠 PostgreSQL
+long-term historical features
+used for model retraining
+Why store history?
+Because models are trained on past labeled data.
+Redis is short-term memory
+Postgres is long-term storage
+
+🟡 FastAPI Model Service
+fetches features
+loads model
+returns json
+
+
+“Kafka streams live events, Flink extracts session-level features in real time, Spark computes historical reputation metrics, Redis stores features for fast inference, PostgreSQL stores them for retraining, and FastAPI serves the bot prediction.”

@@ -1,0 +1,171 @@
+This repo is a big simulation of:
+
+🚶 Humans vs 🤖 Bots
+👉 Performing actions on a fake website
+🧠 A system detecting who is human vs who is a bot
+📌 In real time
+⚡ Using streaming ML
+
+So instead of data stored in files,
+data is flowing all the time like a river.
+
+🧱 What Are The Pieces?
+
+🧩 1. Traffic Simulator → “Creates Fake People”
+It sends events like:
+mouse moved
+clicked something
+scrolled
+typed
+
+Two types:
+
+✔ humans (random, messy behavior)
+✔ bots (very predictable patterns)
+
+🎯 This is fake data but realistic enough.
+-----------------------------------------------------------------------------
+
+🧩 2. Kafka → “Mailman Delivering Events”
+Kafka takes all incoming data and holds it temporarily.
+Think:
+Busy mailbox storing events until someone processes them.
+You can go to Kafka UI:
+👉 http://localhost:18080
+
+----------------------------------------------------------------------------
+
+🧩 3. Flink Processor → “The Real-Time Feature Calculation”
+This part:
+watches events as they stream in
+looks per session
+builds behavioral patterns
+
+Some examples:
+
+Behavior                              	Meaning
+mouse path smoothness	             humans wiggle
+click velocity	                     bots click evenly
+timing irregularity	                 humans delay inconsistently
+
+This is the heart of the ML pipeline.
+Look into folder: flink-processor/
+
+----------------------------------------------------------------------------
+
+🧩 4. Spark Processor
+This is an optional copy of Flink logic.
+Think of it as:
+⭐ Same features
+⭐ Different tool
+✔ Good for comparing which works better
+
+----------------------------------------------------------------------------
+
+🧩 5. Feature Store
+This is just storage:
+
+Storage	                                             Purpose
+Redis	                                             FAST! Online lookup so API is quick
+PostgreSQL	                                         Historical data for training
+
+You can think:
+Redis = "cache for predictions now"
+PostgreSQL = "everything recorded forever"
+
+-----------------------------------------------------------------------------
+
+🧩 6. Bot Detection API → “Makes predictions”
+
+Based on features retrieved, it returns:
+✔ bot probability
+✔ whether to show CAPTCHA
+✔ session scores
+
+Example response:{
+  "bot_probability": 0.85,
+  "should_challenge": true
+}
+
+-----------------------------------------------------------------------------
+
+🧩 7. CAPTCHA Service
+
+If probability is high → show challenge
+If challenge solved → mark session safe
+
+✨ Adaptive, not shown to everyone ✨
+
+-----------------------------------------------------------------------------
+
+🧠 Spark in THIS Repo = “Alternative Feature Engine”
+
+There are two processors:
+
+🟣 Flink → main pipeline
+🟡 Spark → alternative pipeline
+
+Think of Spark as:
+
+Another way to compute the same user behavior signals,
+but using micro-batches instead of event-by-event updates.
+
+🧠 How Spark Works (Simple Version)
+Instead of processing events one-by-one like Flink does,
+Spark groups data into batches such as:
+
+📦 “every 5 seconds”
+📦 “every 10 seconds”
+
+Then it calculates the same features you saw in Flink:
+click velocity
+number of actions in a session
+timing patterns
+mouse movement stats
+and writes them to:
+
+🟢 Redis (online, fast reads)
+🟢 PostgreSQL (historical records)
+
+"Spark is basically doing things in small batches instead of reacting to every single event one at a time like Flink does. So it's kind of a different way of getting the same information. Having both lets us see which approach works better—like which is faster, more accurate, and handles mistakes or slowdowns better."
+
+--------------------------------------------------------------------
+
+Why is Spark in here?
+
+Say:
+
+“Spark gives us a batch-based version of the same feature processing so we can compare it to Flink and see which one works better.”
+
+When someone asks:
+What does Spark actually do?
+
+Say:
+
+“It takes user events, groups them by session and time window, calculates behavior features, and writes them out so the model can score each session.”
+
+“In our repo, Spark is basically another path for computing behavior-based features from live user events. It starts a SparkSession, subscribes to the Kafka topic, reads events continuously, and groups them into very small time-based batches. Inside those batches it computes the same behavioral features that the Flink pipeline calculates—things like event counts, click velocity, timing gaps, etc. Then Spark writes those features out to Redis for fast lookups and to PostgreSQL to store history. The idea is that Flink is real-time event-by-event, while Spark batches events every few seconds. Having both engines in the repo lets us compare how streaming pipelines behave under two different strategies.”
+
+“Spark does the same feature engineering as Flink, but instead of reacting instantly to every single event, Spark processes events in tiny time windows (micro-batches). This is useful because we can compare latency, throughput, and accuracy between batch-style streaming and real-time streaming.”
+
+
+--------------------------------------------------------------------------------
+
+Apache Spark is an open-source engine built in 2009 for analyzing huge amounts of data.
+Before Spark, companies mainly used MapReduce, but it was slow because every step had to be written back to disk. Spark solved that problem by running in memory, which made it up to about 100x faster. That was a huge game-changer.
+
+Today, companies like NASA, Amazon, and over 80% of Fortune 500 organizations use Spark for large-scale data processing.
+
+Spark can run locally on your laptop or across multiple machines using Kubernetes to scale horizontally.
+
+When you use Spark, you typically:
+start a Spark session
+load data into memory
+process that data using either DataFrames or SQL
+Spark also includes its own machine-learning library called MLlib, which lets you train models directly inside Spark without switching to another tool.
+
+“Spark basically came in because companies went from storing tiny amounts of data to petabytes. MapReduce existed, but it was slow because everything hit the disk. Spark changed that—it does stuff in memory, which made it way faster. That’s why Amazon, NASA, and tons of Fortune 500 companies use it.
+
+You can even run Spark locally, right on your machine. You start a Spark session, load data into memory, and it becomes a DataFrame that you can query like SQL or use for ML.
+
+Spark also comes with MLlib, which is built-in machine learning… so Spark can handle data and train models at massive scale. And if you need more power, Kubernetes can scale Spark horizontally.”

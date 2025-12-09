@@ -1,0 +1,20 @@
+This week was mainly about:
+
+🔹 Kubernetes for ML
+How containers are orchestrated
+Deploying services into clusters
+Scaling apps
+Managing pods automatically
+
+🔹 Infrastructure as Code (Terraform)
+Instead of clicking around in cloud dashboards
+You declare infrastructure in files
+Then Terraform creates it for you
+
+🔹 GitOps + ArgoCD
+Code runs → automatically updates live deployments
+Less manual updating
+Continuous syncing between repo and reality
+
+🏁 Main takeaway:
+“Write configuration → push changes → Kubernetes + ArgoCD apply those changes for you.”
