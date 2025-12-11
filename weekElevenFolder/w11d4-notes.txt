@@ -1,0 +1,79 @@
+⭐️ Key Terms (Short Definitions)
+Subgraph → A service with its own GraphQL schema.
+Supergraph → All subgraphs combined (the full API).
+Gateway → The service that composes subgraphs and routes queries.
+@key → Identifies how types link between subgraphs.
+Resolvers → Functions that fetch the actual data.
+Schema Composition → Gateway’s process of merging schemas.
+Schema Stitching → Old, manual method of combining schemas (now replaced by Federation).
+
+⭐️ GraphQL — Core Notes
+
+GraphQL is a query language that lets the client control exactly what data it wants.
+
+Instead of hitting multiple REST endpoints, GraphQL uses a single endpoint.
+
+You write a query that describes the exact fields you want returned — no more overfetching or underfetching like you get with REST.
+
+GraphQL handles nested and related data in a single request.
+
+GraphQL doesn’t store data itself — it uses resolvers to fetch data from databases, ML models, or other services.
+
+------------------------------------------------------
+
+⭐️ Apollo Federation — Big Picture
+
+Apollo Federation splits a large GraphQL schema into multiple smaller schemas called subgraphs.
+
+Each subgraph belongs to a different service or team and owns its own domain.
+
+The Apollo Gateway sits in front of all subgraphs, loads their schemas, and automatically composes them into one unified supergraph.
+
+The client still interacts with a single API, but behind the scenes the gateway routes parts of the query to the correct subgraphs.
+
+------------------------------------------------------
+
+⭐️ Why Federation Exists
+
+Before Federation, people used schema stitching, which was complicated, fragile, and easy to break.
+
+Schema stitching required deep knowledge of the entire combined schema.
+
+Federation fixes this by letting each subgraph define just its own part and using metadata (like @key, @extends) so the gateway can link everything cleanly.
+
+---------------------------------------------------------
+
+⭐️ How Federation Works (Simple Version)
+
+Subgraphs
+Each service has its own schema.
+Each service fully understands its types and fields.
+
+Examples:
+Users
+Movies
+Reviews
+Inventory
+Products
+
+Supergraph (Gateway)
+Collects all subgraph schemas.
+Validates and composes them into one supergraph.
+Directs each field of a query to the right subgraph.
+
+Client
+Makes one GraphQL request.
+The gateway splits it, sends pieces to the correct services, and stitches the results.
+
+⭐️ Architecture Layout
+
+Client
+→ Supergraph (Gateway)
+→ Subgraphs (Users, Reviews, Products, Inventory, etc.)
+
+⭐️ Why Federation Is Great for ML and Large Teams
+
+Each team can own their own domain (predictions, training, user data, feature store).
+Teams can deploy independently without breaking each other.
+Gateway keeps the frontend simple with one API.
+Perfect for enterprise systems and big organizations.
