@@ -1,0 +1,137 @@
+GRAPHQL AND GRPC – CLASS NOTES
+Andrea Churchwell
+
+GRAPHQL – OVERVIEW
+
+GraphQL is an API query language where the client decides exactly what data it wants to receive. Instead of the server returning a fixed response like in REST, the client sends a query that specifies the fields it needs, and the server responds with only that data.
+
+GraphQL typically uses a single endpoint (usually /graphql) for all requests.
+
+GRAPHQL – KEY CONCEPTS
+Schema
+The schema is the contract between the client and the server. It defines:
+
+What types exist (Book, User, etc.)
+
+What fields each type has
+
+What queries and mutations are allowed
+
+If something is not in the schema, it cannot be requested.
+
+In Strawberry (Python), schemas are defined using Python classes and decorators.
+
+Resolver
+A resolver is a function that runs when a specific field is requested in a GraphQL query.
+Resolvers are responsible for:
+
+Fetching data
+
+Running logic
+
+Returning results in the shape defined by the schema
+
+Resolvers only run when their fields are requested, which makes GraphQL efficient.
+
+Queries
+Queries are used to read or fetch data.
+They do not modify anything.
+
+Example conceptually:
+
+Get all books
+
+Get a book by ID
+
+Mutations
+Mutations are used to change data.
+They handle operations like:
+
+Create
+Update
+Delete
+
+Mutations make side effects explicit and separate from read operations.
+
+Strawberry (Python GraphQL library)
+Strawberry is a Python library that makes it easy to build GraphQL APIs.
+It:
+Uses Python type hints
+Automatically builds the schema
+Connects queries and mutations to resolver functions
+
+WHY GRAPHQL IS USEFUL
+The client controls the response shape
+Avoids over-fetching and under-fetching data
+Strongly typed and self-documenting
+Works well for complex or evolving frontends
+
+gRPC – OVERVIEW
+gRPC is a high-performance, machine-to-machine communication framework.
+It is designed for backend services talking to other backend services, not for browsers.
+
+gRPC uses:
+Protocol Buffers (Protobuf) instead of JSON
+HTTP/2 for transport
+Strongly typed contracts
+gRPC – KEY CONCEPTS
+
+Protocol Buffers (Protobuf)
+Protobuf is a binary serialization format that is:
+Smaller than JSON
+Faster to parse
+Strongly typed
+gRPC services are defined in .proto files.
+
+Service Definition
+A gRPC service defines:
+The methods available
+Request message types
+Response message types
+Once defined, client and server code can be auto-generated.
+
+Communication Patterns
+gRPC supports multiple patterns:
+Unary (request → response)
+Server streaming
+Client streaming
+
+Bidirectional streaming
+This makes it very powerful for real-time or high-throughput systems.
+
+WHY gRPC IS USEFUL
+Very fast and efficient
+Strong contracts enforced at compile time
+Great for internal microservices
+Supports streaming data naturally
+
+GRAPHQL VS gRPC (HIGH-LEVEL COMPARISON)
+GraphQL:
+Client-driven data fetching
+Best for frontend-to-backend APIs
+Uses JSON
+Focused on flexibility
+
+gRPC:
+Server-defined contracts
+Best for backend-to-backend communication
+
+Uses Protobuf (binary)
+Focused on performance and efficiency
+
+WHEN TO USE EACH
+
+Use GraphQL when:
+You need flexible data fetching
+You are building APIs for frontends
+You want one endpoint with many query options
+
+Use gRPC when:
+Services need to talk to each other
+Performance and low latency matter
+You want strict contracts and streaming support
+
+SUMMARY
+
+GraphQL and gRPC solve different problems.
+GraphQL focuses on flexible, client-driven APIs, while gRPC focuses on fast, structured service-to-service communication. Understanding both helps in designing scalable modern systems.
