@@ -1,0 +1,94 @@
+Class Notes — FinOps & Cost-Aware System Design
+FinOps Principle
+
+"Cost optimization is not ‘make everything cheap.’ It’s ‘spend wisely on the right guarantees.’
+You should never trade away security or reliability to reduce cost."
+
+Meaning:
+Cost is an engineering responsibility. Good systems balance cost, security, and reliability — not optimize one at the expense of the others.
+
+Tonight’s Mission
+
+Learn to read cloud bills and understand where money is actually being spent.
+
+Understand pricing models (on-demand, reserved, spot).
+
+Practice making trade-off decisions between cost, security, and reliability.
+
+Walk away with a cost plan for the capstone.
+
+Learning Modules
+
+1. FinOps Fundamentals
+
+Cloud cost is everyone’s responsibility, not just finance.
+
+FinOps operates in three phases:
+
+Inform → Optimize → Operate (visibility → action → continuous improvement)
+
+ML workloads have special cost drivers (compute-heavy, storage-heavy, experimentation).
+
+2. Cloud Bill Analyzer
+
+Learn to read real cloud bills.
+
+Identify top cost drivers (compute, storage, data transfer).
+
+Spot waste and estimate potential savings.
+
+3. Instance Pricing Simulator
+
+Compare:
+
+On-demand = flexible, most expensive
+
+Reserved = cheaper, long-term commitment
+
+Spot = cheapest, unreliable/interruption risk
+
+Learn when each is appropriate (especially for ML workloads).
+
+4. Trade-off Decision Maker
+
+Practice scenarios where:
+
+Cost conflicts with reliability or security
+
+The “cheapest” option is not always acceptable
+
+Reinforces thinking like a production engineer.
+
+5. Capstone Cost Planner
+
+Identify cost drivers for your own project.
+
+Plan optimizations and constraints.
+
+Produce a FinOps-style cost overview doc.
+
+6. Free Tier Navigator
+
+Understand free tier limits and common traps.
+
+Learn how to avoid surprise bills.
+
+Know when free tier stops being enough.
+
+Key Takeaways
+
+Cost optimization ≠ cutting corners.
+
+Cost should be treated like a design constraint, just like latency or security.
+
+Engineers should:
+
+Know where money is being spent
+
+Design systems intentionally
+
+Revisit costs continuously as systems evolve
+
+Short Reflection (Repo Friendly)
+
+Tonight helped connect infrastructure decisions directly to real-world impact. I learned that FinOps is not about minimizing cost at all times, but about making informed trade-offs — spending on the guarantees that matter (security, reliability, performance) and optimizing the rest. The interactive tools made it clear how easy it is to waste money unintentionally, and how important it is for engineers to understand pricing models, cost drivers, and usage patterns as part of responsible system design.

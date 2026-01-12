@@ -1,0 +1,89 @@
+🛡️ W15D1 — Security Engineering
+Prep Notes
+1. What is Security Engineering?
+
+Security engineering is the practice of designing systems that continue to behave safely even when users make mistakes, systems fail, or attackers try to exploit weaknesses.
+
+Goal: Reduce risk, not eliminate all threats.
+
+Security focuses on:
+
+Protecting data
+
+Protecting users
+
+Protecting system integrity
+
+2. OWASP Top 10 — Focus Areas
+A01 — Broken Access Control
+
+What it is: Users can access or modify resources they shouldn’t.
+
+Cause: Missing or incorrect authorization checks.
+
+Example: User A can access User B’s data by changing an ID in a URL.
+
+Mitigation: Enforce authorization on the backend (roles, ownership checks).
+
+A02 — Cryptographic Failures
+
+What it is: Sensitive data is improperly protected.
+
+Cause: Missing encryption, weak algorithms, or insecure transmission.
+
+Examples: HTTP instead of HTTPS, storing plaintext passwords.
+
+Mitigation: Use TLS, strong hashing (bcrypt/argon2), encrypt secrets.
+
+A03 — Injection
+
+What it is: User input is executed as code.
+
+Cause: Input is directly concatenated into queries or commands.
+
+Examples: SQL injection, command injection, prompt injection.
+
+Mitigation: Parameterized queries, input validation, escaping.
+
+3. Authentication vs Authorization
+Concept	Meaning
+Authentication	Verifies who a user is
+Authorization	Determines what they are allowed to do
+
+Common mistake: Auth without authz leads to Broken Access Control.
+
+4. Input Validation
+
+Validate all external input.
+
+Check type, format, length, and allowed values.
+
+Reject bad input before business logic or database access.
+
+Purpose: Prevent injection, errors, and abuse.
+
+5. Key Takeaways
+
+Most vulnerabilities happen at system boundaries.
+
+Never trust user input.
+
+Always enforce permissions on the backend.
+
+Encrypt sensitive data properly.
+
+Treat security as a design concern, not just a patch.
+
+6. One-Sentence Summaries
+
+Broken Access Control: The system fails to restrict what authenticated users can do.
+
+Cryptographic Failures: Sensitive data is not properly protected by encryption.
+
+Injection: Untrusted input is interpreted as executable code.
+
+Authentication: Verifies identity.
+
+Authorization: Verifies permissions.
+
+Input Validation: Ensures data is safe before processing.
